@@ -19,5 +19,15 @@ namespace ExampleMVC.DAL.Context
         {
             optionsBuilder.UseSqlServer("Server=(localdb)\\mssqllocaldb;Database=ExampleMVC;Trusted_Connection=True;");
         }
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            modelBuilder.Entity<Worker>().HasData(
+                new Worker[]
+                {
+                    new Worker { Id=1, Name="Dima", Surname = "Kramkov", Age=23},
+                    new Worker { Id=2, Name="Max", Surname = "Payne", Age=30},
+                    new Worker { Id=3, Name="Dora", Surname = "Explorer", Age=15}
+                });
+        }
     }
 }

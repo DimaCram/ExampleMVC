@@ -9,5 +9,6 @@ namespace ExampleMVC.DAL.Interfaces
     {
         IRepository<Worker> Workers { get; }
         void Save();
+        void Dispose();
     }
 }

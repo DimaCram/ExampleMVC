@@ -1,0 +1,30 @@
+﻿@model List<WorkerModel>
+@{
+    ViewData["Title"] = "Workers";
+}
+<div class="big-pannel">
+    <table class="table">
+        <thead class="thead-dark">
+        <tr>
+            <th scope="col">Name</th>
+            <th scope="col">Surname</th>
+            <th scope="col">Age</th>
+            <th scope="col"></th>
+        </tr>
+        </thead>
+        <tbody>
+            @foreach (var worker in Model)
+            {
+
+                <tr>
+                    <th scope="col">@worker.Name</th>
+                    <th scope="col">@worker.Surname</th>
+                    <th scope="col">@worker.Age</th>
+                    <th scope="col">@Html.ActionLink("Edit", "EditWorker", "Worker", new { id = worker.Id }, new { @class = "btn btn-success" })
+                                    @Html.ActionLink("Delete", "DeleteWorker", "Worker", new { id = worker.Id }, new { @class = "btn btn-danger" })</th>
+                </tr>
+            }
+        </tbody>
+    </table>
+    @Html.ActionLink("Add new worker", "AddWorker", "Worker", null, new { @class = "btn btn-primary" })
+</div>

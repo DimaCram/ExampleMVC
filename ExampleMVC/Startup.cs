@@ -50,7 +50,7 @@ namespace ExampleMVC
             {
                 endpoints.MapControllerRoute(
                     name: "default",
-                    pattern: "{controller=Home}/{action=Index}/{id?}");
+                    pattern: "{controller=Worker}/{action=Index}/{id?}");
             });
         }
     }
